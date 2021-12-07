@@ -12,9 +12,11 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "craco start",
-    "build": "craco build",
+    "build:style": "tailwind build src/index.css -o src/styles/tailwind.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "serve -s build",
+    "build": "CI=false &&  craco build",
     "test": "craco test test",
     "eject": "react-scripts eject"
   },
